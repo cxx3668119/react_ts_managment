@@ -1,3 +1,4 @@
+import React from "react"
 import styles from './comp1.module.scss'
 function Comp1() {
     return(

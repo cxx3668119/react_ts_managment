@@ -7,6 +7,8 @@ import { Navigate } from "react-router-dom";
 // const About = lazy(() => import("../views/About"));
 const Page1 = lazy(() => import("../views/Page1"));
 const Page2 = lazy(() => import("../views/Page2"));
+const Login = lazy(() => import("@/views/Login"));
+const Page301 = lazy(() => import("../views/Page301"));
 // const baseRouter = () => (
 //   <BrowserRouter>
 //     <Routes>
@@ -40,6 +42,7 @@ const routes = [
     path: "/",
     element: <Home />,
     children: [
+        
       {
         path: "/page1",
         element: withLoading(<Page1 />)
@@ -47,8 +50,20 @@ const routes = [
       {
         path: "/page2",
         element: withLoading(<Page2 />)
+      },
+      {
+        path: "/page3/page301",
+        element: withLoading(<Page301 />)
       }
     ]
+  },
+  {
+    path: "/login",
+    element: withLoading(<Login />)
+  },
+  {
+    path:'*',
+    element: <Navigate to="/page1" />
   }
 ];
 
